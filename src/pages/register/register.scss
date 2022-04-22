@@ -1,0 +1,87 @@
+.register {
+    background-color: rgb(239, 239, 239);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+        display: flex;
+        width: 70%;
+        height: 480px;
+    }
+}
+
+.registerLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+    h1 {
+        color: blue;
+        margin-bottom: 0;
+        font-size: 2.5rem;
+    }
+
+    p {
+        margin-top: 0;
+        font-size: 1.3rem;
+    }
+}
+
+.registerRight {
+    background-color: white;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    input {
+        width: 90%;
+        height: 50px;
+        border: 1px solid gray;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button:nth-of-type(1) {
+        width: 90%;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    button:nth-of-type(2) {
+        width: 60%;
+        height: 50px;
+        margin: 0px auto 0px auto;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        background-color: rgb(0, 161, 0);
+    }
+}
+
+.errorInput {
+    outline: 2px solid rgb(255, 38, 0);
+}

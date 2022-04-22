@@ -1,0 +1,26 @@
+.closeList {
+    padding: 0;
+    margin-top: -20px;
+    list-style-type: none;
+    font-size: .8rem;
+
+    li {
+        margin-bottom: 20px;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+
+        div {
+            position: relative;
+            margin-right: 20px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.profile {
+    display: flex;
+    margin-top: 50px;
+
+   .profileleft{
+       flex: 3;
+   }
+   .profileright{
+        flex: 9;
+   }
+
+}
+
+.profileRightBottom{
+    display: flex;
+    flex: 9;
+
+    >:first-child{
+        flex: 5;
+        margin-left: 5px;
+    }
+
+    >:nth-child(2){
+        flex: 4;
+    }
+}

@@ -1,0 +1,17 @@
+.home{
+    display: flex;
+    margin-top: 50px;
+
+    .left{
+        flex: 3;
+        
+    }
+
+    .feed{
+        flex: 5;
+    }
+
+    .right{
+        flex: 4;
+    }
+}

@@ -1,0 +1,31 @@
+.userFriends {
+    margin-top: 10px;
+    > h4 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.friends {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 125px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    span {
+        font-size: .8rem;
+        margin-top: 5px;
+    }
+}
