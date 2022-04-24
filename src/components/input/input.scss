@@ -1,0 +1,14 @@
+.formInput {
+    width: 90%;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.errorInput {
+    outline: 2px solid rgb(255, 38, 0);
+}

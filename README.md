@@ -1,3 +1,10 @@
+# SocialApp
+
+## Note:
+
+because the data of this app is fake and very simple the functionality implementaion
+of this app is low.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

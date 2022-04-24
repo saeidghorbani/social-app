@@ -47,17 +47,6 @@
         gap: 20px;
     }
 
-    input {
-        width: 90%;
-        height: 50px;
-        border: 1px solid gray;
-        border-radius: 5px;
-
-        &:focus {
-            outline: none;
-        }
-    }
-
     button:nth-of-type(1) {
         width: 90%;
         height: 50px;
@@ -80,8 +69,4 @@
         font-size: 1rem;
         background-color: rgb(0, 161, 0);
     }
-}
-
-.errorInput {
-    outline: 2px solid rgb(255, 38, 0);
 }

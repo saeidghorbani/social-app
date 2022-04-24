@@ -1,40 +1,43 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Input from "../../components/input/Input";
 import "./register.scss";
 
 const Register = () => {
-	const [username, setUsername] = useState("");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [password2, setPassword2] = useState("");
-	const [usernameError, setUsernameError] = useState(false);
-	const [emailError, setEmailError] = useState(false);
-	const [passwordError, setPasswordError] = useState(false);
-	const [password2Error, setPassword2Error] = useState(false);
+	const [values, setValues] = useState({
+		username: "",
+		email: "",
+		password: "",
+		password2: "",
+	});
+	const [errors, setErrors] = useState({});
 
 	const navigate = useNavigate();
+
+	const handleChange = (e) => {
+		setValues({ ...values, [e.currentTarget.name]: e.currentTarget.value });
+	};
+
+	const validateForm = (values) => {
+		const err = {};
+		for (const key in values) {
+			if (values[key].trim() === "") err[key] = true;
+		}
+		return err ? err : false;
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (e.target[0].value === "") {
-			setUsernameError(true);
-			return false;
-		} else if (e.target[1].value === "") {
-			setEmailError(true);
-			return false;
-		}
-		if (e.target[2].value === "") {
-			setPasswordError(true);
-			return false;
-		}
-		if (e.target[3].value === "") {
-			setPassword2Error(true);
-			return false;
-		} else navigate("/home");
+		const err = validateForm(values);
+		setErrors(err || {});
+		console.log(err);
+		if (Object.keys(err).length) return;
+
+		navigate("/home");
 	};
 
-	const handleClick = () => {
+	const handleGoLogin = (e) => {
 		navigate("/login");
 	};
 
@@ -52,36 +55,36 @@ const Register = () => {
 					</div>
 					<div className="registerRight">
 						<form onSubmit={handleSubmit}>
-							<input
+							<Input
 								name="username"
 								type="text"
 								placeholder="Username"
-								className={usernameError ? "errorInput" : ""}
-								onChange={(e) => setUsername(e.target.value)}
+								error={errors.email}
+								onChange={handleChange}
 							/>
-							<input
+							<Input
 								name="email"
 								type="text"
 								placeholder="Email"
-								className={emailError ? "errorInput" : ""}
-								onChange={(e) => setEmail(e.target.value)}
+								error={errors.email}
+								onChange={handleChange}
 							/>
-							<input
+							<Input
 								name="password"
 								type="text"
 								placeholder="Password"
-								className={passwordError ? "errorInput" : ""}
-								onChange={(e) => setPassword(e.target.value)}
+								error={errors.email}
+								onChange={handleChange}
 							/>
-							<input
+							<Input
 								name="password2"
 								type="text"
 								placeholder="Password Again"
-								className={password2Error ? "errorInput" : ""}
-								onChange={(e) => setPassword2(e.target.value)}
+								error={errors.email}
+								onChange={handleChange}
 							/>
 							<button type="submit">Sign Up</button>
-							<button onClick={handleClick}>Log into Account</button>
+							<button onClick={handleGoLogin}>Log into Account</button>
 						</form>
 					</div>
 				</div>
